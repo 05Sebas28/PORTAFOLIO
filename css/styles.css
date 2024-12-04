@@ -1,0 +1,519 @@
+/* ---------------------------------------------------- */
+/* Estilos generales                                    */
+/* ---------------------------------------------------- */
+body {
+  font-family: 'Poppins', sans-serif; /* Fuente principal de la página */
+  margin: 0; /* Elimina los márgenes del body */
+  padding: 0; /* Elimina los paddings del body */
+  overflow-x: hidden; /* Esto oculta cualquier desbordamiento horizontal */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garantiza que el padding no afecte al tamaño total de los elementos */
+}
+
+/* ---------------------------------------------------- */
+/* Barra de navegación                                  */
+/* ---------------------------------------------------- */
+
+
+.navbar {
+  font-size: 18px; /* Tamaño del texto en la barra de navegación */
+}
+
+.navbar-brand {
+  margin-left: 65px; /* Ajusta este valor para centrar la "S" */
+  font-size: 30px; /* Tamaño del texto del logo */
+  font-weight: bold; /* Hace el logo más visible */
+}
+
+.logo {
+  font-size: 40px; /* Tamaño más grande para la "S" */
+  font-weight: bold; /* Peso de la letra del logo */
+  color: #348E91; /* Color de la "S" */
+}
+
+.nav-link.active {
+  color: #348E91 !important; /* Resalta el enlace activo en la barra de navegación */
+}
+
+/* ---------------------------------------------------- */
+/* Sección principal                                    */
+/* ---------------------------------------------------- */
+
+.main-section {
+  background: linear-gradient(116deg, #1C5052 20%, #3FB4B8 95%); /* Fondo con gradiente */
+  color: white; /* Color del texto */
+  min-height: calc(100vh - 56px); /* Altura completa menos la altura del navbar */
+  display: flex; /* Flexbox para alineación */
+  align-items: center; /* Centra contenido verticalmente */
+  justify-content: center; /* Centra contenido horizontalmente */
+  padding: 20px; /* Espaciado interno */
+  box-sizing: border-box; /* Considera el padding en el tamaño */
+  text-align: center; /* Centra el texto */
+}
+
+/* Imagen de perfil */
+.profile-image {
+  border: 4px solid #348E91; /* Borde de la imagen */
+  border-radius: 10px; /* Esquinas redondeadas */
+  margin-right: 20px; /* Espaciado lateral */
+  max-width: 450px; /* Tamaño máximo de la imagen */
+  height: auto; /* Mantiene proporciones */
+}
+
+/* Texto principal */
+.main-title {
+  font-size: 48px; /* Tamaño del texto */
+  font-weight: 700; /* Hace el texto más grueso */
+  line-height: 1.2; /* Espaciado entre líneas */
+  max-width: 800px; /* Limita el ancho del texto */
+}
+
+.main-title .highlight {
+  color: #0A0C0D; /* Color diferente para destacar palabras clave */
+}
+
+/* ---------------------------------------------------- */
+/* Sección Hero con cirulos de fondo*/
+/* ---------------------------------------------------- */
+.hero-section {
+  background: 
+    linear-gradient(
+      116deg, #1C5052 20%, #1C5052 31%, #1C5052 46%, #1F595C 54%, 
+      #226265 60%, #256B6E 68%, #287376 73%, #2A797C 83%, #328F92 90%, #3FB4B8 95%
+    ); /* Mantengo el gradiente de fondo */
+  color: white; /* Color del texto */
+  padding: 50px 0; /* Espaciado vertical */
+  position: relative; /* Necesario para el posicionamiento de las cirulos */
+  overflow: hidden; /* Asegura que nada sobresalga fuera de la sección */
+}
+
+/* Pseudo-elemento para las cirulos */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3Ccircle cx="0.5" cy="0.5" r="0.15" fill="rgba(0,0,0,0.3)" /%3E%3C/svg%3E') repeat;
+  background-size: 50px 50px; /* cirulos menos frecuentes y de tamaño moderado */
+  z-index: 0; /* Coloca los cirulos detrás del contenido */
+  opacity: 0.2; /* cirulos más suaves y menos prominentes */
+}
+
+/* Estilos para el texto */
+.hero-section .fw-bold {
+  font-size: 2.5rem; /* Tamaño del título */
+  font-family: 'Montserrat', sans-serif; /* Fuente del título */
+  z-index: 2; /* Asegura que el texto esté encima de los circulos */
+  position: relative; /* Hace que el texto se posicione correctamente */
+}
+
+.hero-section p {
+  font-size: 1.2rem; /* Tamaño del texto del párrafo */
+  font-family: 'Montserrat', sans-serif; /* Fuente del párrafo */
+  line-height: 1.8; /* Espaciado entre líneas */
+  z-index: 2; /* Asegura que el texto esté encima de los circulos */
+  position: relative; /* Hace que el texto se posicione correctamente */
+}
+
+.hero-section .btn-primary {
+  background-color: #348E91; /* Color del botón */
+  border: none; /* Sin borde */
+  font-size: 1rem; /* Tamaño del texto del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  font-family: 'Montserrat', sans-serif; /* Fuente del botón */
+  transition: background-color 0.3s ease; /* Transición al pasar el mouse */
+  z-index: 2; /* Asegura que el botón esté encima de los circulos */
+  position: relative; /* Hace que el botón se posicione correctamente */
+}
+
+.hero-section .btn-primary:hover {
+  background-color: #256B6E; /* Color del botón al pasar el mouse */
+}
+
+.hero-section img {
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho */
+  border-radius: 10px; /* Esquinas redondeadas */
+  position: relative; /* Asegura que la imagen quede correctamente dentro del contenedor */
+  z-index: 2; /* Asegura que la imagen esté encima de los circulos */
+}
+
+
+/* Footer (Redes Sociales)                              */
+
+.footer {
+  position: absolute; /* Hace que el footer se "pegue" al final */
+  bottom: 0; /* Lo coloca en la parte inferior */
+  width: 100%; /* Se asegura de que cubra todo el ancho */
+}
+
+
+.social-icon {
+  font-size: 24px; /* Tamaño de los íconos sociales */
+  color: white; /* Color de los íconos */
+  margin: 0 15px; /* Espaciado entre los íconos */
+  text-decoration: none; /* Elimina subrayado */
+  transition: color 0.3s; /* Efecto de transición para el color */
+}
+
+.social-icon:hover {
+  color: #348E91; /* Cambia de color al pasar el mouse */
+}
+
+/* Estilo general para la sección del portafolio */
+#portafolio {
+  background: #0b3d50; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  padding: 50px 20px;
+  border-radius: 10px;
+}
+
+/* Títulos de la sección */
+#portafolio h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-left: 5px solid #007bff;
+  padding-left: 10px;
+}
+
+/* Texto descriptivo */
+#portafolio p {
+  font-size: 250px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Estilo de los contenedores de los proyectos */
+#portafolio .text-center {
+  width: 45%; /* Ocupa el 45% del espacio */
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #123a4a; /* Fondo más oscuro para el contraste */
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Íconos dentro de los proyectos */
+#portafolio img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Estilo del texto debajo de los íconos */
+#portafolio p.mt-2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* SECCION HABILIDADES */
+
+.habilidades-box {
+  border: 3px solid #213635; /* Borde del cuadro */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 30px; /* Espaciado interno del cuadro */
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+}
+
+.github-bar {
+  background-color: #348E91; /* para GitHub */
+}
+
+.php-bar {
+  background-color: #348E91; /* para PHP */
+}
+
+.figma-bar {
+  background-color: #348E91; /* para Figma */
+}
+
+.css-bar {
+  background-color: #348E91; /* para CSS */
+}
+
+.html-bar {
+  background-color: #348E91; /* para HTML */
+}
+
+.text-warning {
+  color: #348E91 !important; /* Cambia el color a un gris claro o cualquier otro color */
+}
+
+
+/* SECCION DE ESTUDIOS */
+
+.estudios {
+  background: url(./img/fondo-fnd_est.png);
+  background: linear-gradient(116deg, #1C5052 20%, #3FB4B8 95%);
+  padding: 50px 0;
+  text-align: center;
+  color: #F2F2F2;
+}
+
+.contenedor-estudios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  width: 64px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #F2F2F2;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* SECCION EXPERIENCIA */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.experiencia {
+  background: linear-gradient(116deg, #1C5052 20%, #3FB4B8 95%);
+  padding: 50px 0;
+  color: #F2F2F2;
+
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.tarjeta {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.icono {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+
+}
+
+.linea {
+  width: 80%;
+  height: 2px;
+  background: #F2F2F2;
+  margin: 10px auto;
+  border: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #F2F2F2;
+}
+
+/* SECCION HOBBIES */
+.hobbies {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  background: linear-gradient(116deg, #1C5052 20%, #1C5052 31%, #1C5052 46%, #1F595C 54%, #226265 60%, #256B6E 68%, #287376 73%, #2A797C 83%, #328F92 90%, #3FB4B8 95%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 50px 20px; /* Espaciado interno */
+  display: flex; /* Para organizar los elementos */
+  flex-direction: column; /* Alinea los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+}
+
+/* Iconos de hobbies */
+.hobby-icon {
+  width: 180px;
+  height: 180px;
+  margin: 30px; /* Espaciado entre íconos */
+}
+
+/* Contenedor para los íconos */
+.hobby-icons-container {
+  display: flex; /* Muestra los íconos en fila */
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que los íconos se acomoden en varias filas en pantallas pequeñas */
+}
+
+/* Descripción de hobbies */
+.hobby-description {
+  display: inline-block; /* Hace que el cuadro ajuste su tamaño al contenido */
+  padding: 20px; /* Espaciado interno del cuadro */
+  margin-top: 20px; /* Espaciado superior */
+  border: 3px solid #348E91; /* Borde del cuadro */
+  border-radius: 15px; /* Bordes redondeados */
+  background-color: #0A0C0D; /* Fondo dentro del cuadro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  font-family: 'Montserrat', sans-serif; /* Fuente consistente */
+  font-size: 1rem; /* Tamaño del texto */
+  color: #333; /* Color del texto */
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+.hobby-description span {
+  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+.hobby-description .highlight {
+  color: #348E91;
+}
+
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hobbies {
+    padding: 20px;
+  }
+
+  .hobby-description span {
+    font-size: 1.5rem;
+  }
+
+  .hobby-icon {
+    width: 40px; /* Reduce el tamaño de los íconos */
+    height: 40px;
+  }
+}
+
+
+/* Hover para los proyectos */
+#portafolio .text-center:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
+}
+
+
+/* Responsivo para pantallas pequeñas y medianas */
+@media (max-width: 1024px) {
+  .navbar-brand {
+    margin-left: 20px;
+  }
+
+  .hero-section .fw-bold {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .main-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section img {
+    margin: 0 auto 20px;
+  }
+
+  .hero-section .btn-primary {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .main-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .profile-image {
+    margin-bottom: 20px;
+  }
+
+  .main-title {
+    font-size: 28px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Adaptabilidad para Smartphones (430px X 932px)      */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-section img {
+    margin: 0 auto 20px; /* Centra la imagen */
+  }
+
+  .hero-section .btn-primary {
+    width: 100%; /* Botón de ancho completo */
+    margin-top: 10px;
+  }
+
+  .main-section {
+    flex-direction: column; /* Elementos en columna */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .profile-image {
+    margin-bottom: 20px; /* Espaciado inferior */
+  }
+
+  .main-title {
+    font-size: 28px; /* Texto más pequeño */
+  }
+
+  .contenedor {
+    flex-direction: column; /* Acomoda tarjetas en columna */
+    gap: 20px; /* Espaciado entre tarjetas */
+  }
+
+  .tarjeta {
+    width: 90%; /* Ancho casi completo en móviles */
+  }
+
+  .hobbies {
+    padding: 20px; /* Reduce padding */
+  }
+
+  .hobby-icon {
+    width: 100px; /* Reduce tamaño de íconos */
+    height: 100px;
+  }
+
+  .hobby-description {
+    padding: 15px; /* Ajusta el padding */
+    font-size: 0.9rem; /* Texto más pequeño */
+  }
+
+  .navbar {
+    font-size: 14px; /* Texto más pequeño en el navbar */
+  }
+}
